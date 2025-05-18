@@ -4,10 +4,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class categoria extends Model {
     static associate(models) {
-      categoria.belongsToMany(models.producto, { 
-        through: 'categoriaproducto', 
-        foreignKey: 'categoriaid'  
-      });
+      categoria.belongsToMany(models.producto, { through: 'categoriaproducto', foreignKey: 'categoriaid' });
     }
   }
 
@@ -19,10 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     nombre: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     protegida: {
-      type: DataTypes.BOOLEAN, 
+      type: DataTypes.BOOLEAN,
       defaultValue: false
     }
   }, {
@@ -30,6 +27,6 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
     modelName: 'categoria',
   });
-
+  
   return categoria;
 };

@@ -1,36 +1,26 @@
 module.exports = {
     development: {
-      username: process.env.DB_USER || 'root',
-      password: process.env.DB_PASSWORD || null,
-      database: process.env.DB_DATABASE || 'database_development',
-      host: process.env.DB_HOST || '127.0.0.1',
-      port: process.env.DB_PORT || 3306,
-      dialect: 'mysql',
-      dialectOptions: {
-        connectTimeout: 60000
-      },
-      logging: console.log
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_DATABASE,
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        dialect: 'mysql'
     },
     test: {
-      username: process.env.TEST_DB_USER || 'root',
-      password: process.env.TEST_DB_PASSWORD || null,
-      database: process.env.TEST_DB_DATABASE || 'database_test',
-      host: process.env.TEST_DB_HOST || '127.0.0.1',
-      port: process.env.TEST_DB_PORT || 3306,
-      dialect: 'mysql'
+        username: process.env.TEST_DB_USER,
+        password: process.env.TEST_DB_PASSWORD,
+        database: process.env.TEST_DB_DATABASE,
+        host: process.env.TEST_DB_HOST,
+        port: process.env.TEST_DB_PORT,
+        dialect: 'mysql'
     },
     production: {
-      username: process.env.PROD_DB_USERNAME,
-      password: process.env.PROD_DB_PASSWORD,
-      database: process.env.PROD_DB_NAME,
-      host: process.env.PROD_DB_HOSTNAME,
-      port: process.env.PROD_DB_PORT || 3306,
-      dialect: 'mysql',
-      pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-      }
+        username: process.env.PROD_DB_USERNAME,
+        password: process.env.PROD_DB_PASSWORD,
+        database: process.env.PROD_DB_NAME,
+        host: process.env.PROD_DB_HOSTNAME,
+        port: process.env.PROD_DB_PORT,
+        dialect: 'mysql'
     }
-  };
+}

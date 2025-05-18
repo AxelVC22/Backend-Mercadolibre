@@ -1,14 +1,13 @@
 'use strict';
-/**
- * @type {import('sequelize-cli').Migration}
- */
+
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up (queryInterface, Sequelize) {
     await queryInterface.createTable('categoriaproducto', {
-      categoriaid: {  
-        type: Sequelize.INTEGER,
+      categoriaid: {
         allowNull: false,
         primaryKey: true,
+        type: Sequelize.INTEGER,
         references: {
           model: 'categoria',
           key: 'id'
@@ -16,10 +15,11 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      productoid: { 
-        type: Sequelize.INTEGER,
+
+      productoid: {
         allowNull: false,
         primaryKey: true,
+        type: Sequelize.INTEGER,
         references: {
           model: 'producto',
           key: 'id'
@@ -38,7 +38,7 @@ module.exports = {
     });
   },
 
-  async down(queryInterface, Sequelize) {
+  async down (queryInterface, Sequelize) {
     await queryInterface.dropTable('categoriaproducto');
   }
 };

@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       producto.belongsToMany(models.categoria, { as: 'categorias', through: 'categoriaproducto', foreignKey: 'productoid' });
       producto.belongsTo(models.archivo);
+      //producto.belongsToMany(models.carritos, { as: 'carritos', through: 'carritoproducto', foreignKey: 'productoid'});
     }
   }
-
   producto.init({
     id: {
       type: DataTypes.INTEGER,
@@ -17,17 +17,17 @@ module.exports = (sequelize, DataTypes) => {
     },
     titulo: {
       type: DataTypes.STRING,
-      defaultValue: "Sin título"
+      defaultValue: "Sin titulo"
     },
     descripcion: {
       type: DataTypes.TEXT,
-      defaultValue: "Sin descripción"
+      defaultValue: "Sin descripcion"
     },
     precio: {
-      type: DataTypes.DECIMAL(10, 2),
-      allowNull: false
+      type: DataTypes.DECIMAL(10,2),
+      allowNull: true
     },
-    archivoid: {
+    archivoid: { 
       type: DataTypes.INTEGER,
       allowNull: true
     }
@@ -36,6 +36,5 @@ module.exports = (sequelize, DataTypes) => {
     freezeTableName: true,
     modelName: 'producto',
   });
-
   return producto;
 };

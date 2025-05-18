@@ -11,11 +11,11 @@ module.exports = {
       },
       titulo: {
         type: Sequelize.STRING,
-        defaultValue: "Sin título"
+        defaultValue: "Sin titulo" 
       },
       descripcion: {
         type: Sequelize.TEXT,
-        defaultValue: "Sin descripción"
+        defaultValue: "Sin descripcion"
       },
       precio: {
         type: Sequelize.DECIMAL(10,2)
@@ -40,7 +40,6 @@ module.exports = {
       }
     });
   },
-
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('producto');
   }
