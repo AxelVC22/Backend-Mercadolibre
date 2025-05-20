@@ -38,6 +38,17 @@ self.create = async function (req, res, next){
     try{
         const rolusuario = await rol.findOne({ where: { nombre: req.body.rol }})
 
+        if (!rolusuario) {
+              return res.status(400).json({ mensaje: "El rol especificado no existe." });
+        }
+
+        const existente = await usuario.findOne({ where: { email: req.body.email } });
+        if (existente) {
+            return res.status(400).json({
+                mensaje: 'Ya existe un usuario con ese correo electrónico.'
+            });
+        }        
+
         const data = await usuario.create({
             id: crypto.randomUUID(),
             email: req.body.email,
@@ -54,9 +65,20 @@ self.create = async function (req, res, next){
             nombre: data.nombre,
             rolid: rolusuario.nombre
         })
-    }catch(error){
-        next(error)
+    } catch (error) {
+        if (error.name === 'SequelizeValidationError' || error.name === 'SequelizeUniqueConstraintError') {
+            return res.status(400).json({
+                mensaje: error.message,
+                errores: error.errors?.map(e => ({
+                    campo: e.path,
+                    mensaje: e.message
+                }))
+            });
+        }
+
+        next(error);
     }
+
 }
 
 self.update = async function (req, res, next){

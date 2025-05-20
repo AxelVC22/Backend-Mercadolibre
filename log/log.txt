@@ -29,3 +29,11 @@ Sun May 18 2025 11:42:26 GMT-0600 (hora estándar central) - 500 - ::ffff:127.0.
 Sun May 18 2025 11:42:34 GMT-0600 (hora estándar central) - 500 - ::ffff:127.0.0.1 - Anónimo - Malformed part header
 Sun May 18 2025 11:46:13 GMT-0600 (hora estándar central) - 401 - ::1 - Anónimo - Acceso denegado
 Sun May 18 2025 11:47:42 GMT-0600 (hora estándar central) - 401 - ::1 - Anónimo - invalid token
+Mon May 19 2025 12:03:54 GMT-0600 (hora estándar central) - 401 - ::1 - Anónimo - Acceso denegado
+Mon May 19 2025 12:05:12 GMT-0600 (hora estándar central) - 401 - ::1 - Anónimo - Acceso denegado
+Mon May 19 2025 12:05:26 GMT-0600 (hora estándar central) - 401 - ::1 - Anónimo - Acceso denegado
+Mon May 19 2025 12:05:57 GMT-0600 (hora estándar central) - 401 - ::1 - Anónimo - Acceso denegado
+Mon May 19 2025 12:06:58 GMT-0600 (hora estándar central) - 401 - ::1 - Anónimo - Acceso denegado
+Mon May 19 2025 12:07:00 GMT-0600 (hora estándar central) - 401 - ::1 - Anónimo - Acceso denegado
+Mon May 19 2025 12:07:29 GMT-0600 (hora estándar central) - 500 - ::1 - gvera@uv.mx - Validation error
+Mon May 19 2025 12:10:08 GMT-0600 (hora estándar central) - 500 - ::1 - gvera@uv.mx - Validation error
